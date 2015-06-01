@@ -74,7 +74,7 @@ router.post('createRepo', function(req, res){
 // Creating a branch
 router.post('createBranch', function(req, res){
 
-	var child = exec("cd "+req.body.root+req.body.repo+"; git checkout master; git checkout -b "+req.body.branch; 
+	var child = exec("cd "+req.body.root+req.body.repo+"; git checkout master; git checkout -b "+req.body.branch,
 	  function (error, stdout, stderr) {
 	    console.log('stdout: ' + stdout);
 	    console.log('stderr: ' + stderr);
@@ -93,7 +93,7 @@ router.post('createBranch', function(req, res){
 // Make a commit
 router.post('makeCommit', function(req, res){
 
-	var child = exec("cd "+req.body.root+req.body.repo+"; git checkout "+req.body.branch+"; git init; git add -A .; git commit -m "+req.body.commitName+"; git push origin "+req.body.branch; 
+	var child = exec("cd "+req.body.root+req.body.repo+"; git checkout "+req.body.branch+"; git init; git add -A .; git commit -m "+req.body.commitName+"; git push origin "+req.body.branch,
 	  function (error, stdout, stderr) {
 	    console.log('stdout: ' + stdout);
 	    console.log('stderr: ' + stderr);
