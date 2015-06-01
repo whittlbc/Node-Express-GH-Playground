@@ -84,7 +84,7 @@ router.post('createBranch', function(req, res){
 	    }
 	    else {
 			res.send('Successfully created branch');
-	    }
+	    } 
 	});
 
 });
@@ -144,7 +144,7 @@ router.post('getIssues', function(req, res){
 
 			res.json(issues);
 		}
-	});
+	}); 
 
 });
 
