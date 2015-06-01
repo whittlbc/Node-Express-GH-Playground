@@ -144,7 +144,7 @@ router.post('getIssues', function(req, res){
 
 			res.json(issues);
 		}
-	});
+	}); 
 
 });
 
